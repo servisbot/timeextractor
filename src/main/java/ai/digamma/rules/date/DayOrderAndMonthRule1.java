@@ -21,7 +21,7 @@ public class DayOrderAndMonthRule1 extends ExtractionRule {
 
     protected double confidence = 0.99;
     private int priority = 2;
-    private String rule = "\\b((the)?[\\s]*)" + TemporalConstants.BASIC_ORDER + "([\\s]*(of)?[\\s]*(the)?[\\s]*)?(" + TemporalConstants.MONTH_OF_YEAR + "|" + TemporalConstants.MONTH_OF_YEAR_EASY
+    private String rule = "\\b((the)?[\\s]*)" + TemporalConstants.BASIC_ORDER_NO_LAST + "([\\s]*(of)?[\\s]*(the)?[\\s]*)?(" + TemporalConstants.MONTH_OF_YEAR + "|" + TemporalConstants.MONTH_OF_YEAR_EASY
             + ")[,;\\s]?(([12][0-9]\\d\\d))?\\b";
     protected String example = "the second of December";
     protected UUID id = UUID.fromString("fae4f73e-6257-40aa-a66c-93773d175675");
