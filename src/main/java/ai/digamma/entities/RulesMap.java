@@ -15,7 +15,7 @@ import java.util.ArrayList;
 
 public class RulesMap {
     protected List<RulesGroup> rulesGroups;
-    protected InputStream in = String.class.getResourceAsStream("/rule.json");
+    protected InputStream in = Thread.currentThread().getContextClassLoader().getResourceAsStream("rule.json");
     private static final Logger logger = Logger.getLogger(RulesMap.class);
 
     public RulesMap() {
@@ -25,6 +25,9 @@ public class RulesMap {
 
     private List<RulesGroup> readRules() {
         Gson gson = new Gson();
+        if (this.in == null) {
+            System.out.println("inputstream is null");
+        }
         RulesGroup[] groups = gson.fromJson(new InputStreamReader(this.in), RulesGroup[].class);
         List<RulesGroup> groups_list = Arrays.asList(groups);
         return groups_list;
