@@ -43,15 +43,4 @@ public class TimeIntervalRule3Test extends GeneralTest {
 
     }
 
-    @Test
-    public void timeIntervalRule3Test4() {
-
-        String toPredict = "before 5.30 CET";
-        List<TemporalExtraction> predicted =  new ArrayList<>(DateTimeExtractor.extract(toPredict,settings));
-        assertEquals("before 5.30 CET", predicted.get(0).getTemporalExpression());
-        assertEquals(4, predicted.get(0).getTemporal().get(0).getEndDate().getTime().getHours());
-        assertEquals(30, predicted.get(0).getTemporal().get(0).getEndDate().getTime().getMinutes());
-
-    }
-
 }
